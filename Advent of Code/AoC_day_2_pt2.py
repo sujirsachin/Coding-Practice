@@ -12,24 +12,40 @@ def findMaxScore(data) -> int:
                   ("C", "X"): 6,
                   ("C", "Y"): 0,
                   ("C", "Z"): 3, }
+    win = {"A": "Y",
+           "B": "Z",
+           "C": "X"}
+    lose = {"A": "Z",
+            "B": "X",
+            "C": "Y"}
+    draw = {"A": "X",
+            "B": "Y",
+            "C": "Z"}
     for currentRound in data:
+        if currentRound[1] == "Z":
+            currentRound[1] = win[currentRound[0]]
+        elif currentRound[1] == "X":
+            currentRound[1] = lose[currentRound[0]]
+        else:
+            currentRound[1] = draw[currentRound[0]]
         finalScore += score[currentRound[1]] + roundScore[tuple(currentRound)]
     return finalScore
 
 
-def read_and_transform_data() -> list:
-    data =[]
+def readAndTransformData():
+    data = []
     with open("day2Input.txt", "r") as f:
-        read_data = f.readlines()
-    for line in read_data:
+        readData = f.readlines()
+    for line in readData:
         temp2 = line.split(" ")
         temp2[1] = temp2[1][0:-1]
         data.append(temp2)
     return data
 
-data = read_and_transform_data()
+
+data = readAndTransformData()
+
 data2 = [["A", "Y"], ["B", "X"], ["C", "Z"]]
 #TODO: Last element is not getting parsed- check later
 data[-1][1] = "X"
-print(data)
 print(findMaxScore(data))
