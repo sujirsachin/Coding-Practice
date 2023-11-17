@@ -1,25 +1,5 @@
 import string
 
-
-def findItems(data):
-    error_list = []
-    for container in data:
-        first_compartment = container[:len(container) // 2]
-        second_compartment = container[len(container) // 2:]
-        temp_list = list(set(first_compartment) & set(second_compartment))
-        if temp_list:
-            error_list.append(temp_list[0])
-    values = dict()
-    for index, letter in enumerate(string.ascii_lowercase):
-        values[letter] = index + 1
-    for index, letter in enumerate(string.ascii_uppercase):
-        values[letter] = index + 27
-    sum = 0
-    for character in error_list:
-        sum += values[character]
-    return sum
-
-
 def get_priority_and_sum(data) -> int:
     values = dict()
     for index, letter in enumerate(string.ascii_lowercase):
