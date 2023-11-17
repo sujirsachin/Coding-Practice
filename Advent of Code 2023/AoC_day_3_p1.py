@@ -2,15 +2,14 @@ import string
 
 
 def findItems(data):
-    i = 0
     error_list = []
     for container in data:
+        container = container.replace("\n","")
         first_compartment = container[:len(container) // 2]
         second_compartment = container[len(container) // 2:]
         temp_list = list(set(first_compartment) & set(second_compartment))
         if temp_list:
             error_list.append(temp_list[0])
-        i += 1
     values = dict()
     for index, letter in enumerate(string.ascii_lowercase):
         values[letter] = index + 1
