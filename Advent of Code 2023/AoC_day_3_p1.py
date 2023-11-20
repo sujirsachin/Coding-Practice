@@ -1,10 +1,12 @@
 import string
 
+print("Advent of Code 2022, Link to Problem: {}".format('https://adventofcode.com/2022/day/3'))
+
 
 def findItems(data):
     error_list = []
     for container in data:
-        container = container.replace("\n","")
+        container = container.replace("\n", "")
         first_compartment = container[:len(container) // 2]
         second_compartment = container[len(container) // 2:]
         temp_list = list(set(first_compartment) & set(second_compartment))

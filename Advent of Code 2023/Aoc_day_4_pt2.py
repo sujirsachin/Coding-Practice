@@ -1,3 +1,6 @@
+print("Advent of Code 2022, Link to Problem: {}".format('https://adventofcode.com/2022/day/4'))
+
+
 def find_count_of_duplicates(assignment_pairs) -> int:
     count = 0
     j = 0

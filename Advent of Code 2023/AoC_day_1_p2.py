@@ -1,3 +1,6 @@
+print("Advent of Code 2022, Link to Problem: {}".format('https://adventofcode.com/2022/day/1'))
+
+
 def SumOfCalories(data) -> list:
     calories = []
     for elf in data:
@@ -5,12 +8,15 @@ def SumOfCalories(data) -> list:
     print(calories)
     return calories
 
+
 def getTopThreeMaxCalories(data):
     calories = SumOfCalories(data)
     calories = sorted(calories)
     print(calories[-3:])
     return sum(calories[-3:])
-data = [[1000, 2000, 3000], [4000], [5000, 6000], [7000, 8000,9000], [10000]]
+
+
+data = [[1000, 2000, 3000], [4000], [5000, 6000], [7000, 8000, 9000], [10000]]
 
 with open('day1Input.txt') as f:
     data2 = f.readlines()

@@ -1,3 +1,6 @@
+print("Advent of Code 2022, Link to Problem: {}".format('https://adventofcode.com/2022/day/2'))
+
+
 def findMaxScore(data) -> int:
     finalScore = 0
     score = {"X": 1,
@@ -46,6 +49,6 @@ def readAndTransformData():
 data = readAndTransformData()
 
 data2 = [["A", "Y"], ["B", "X"], ["C", "Z"]]
-#TODO: Last element is not getting parsed- check later
+# TODO: Last element is not getting parsed- check later
 data[-1][1] = "X"
 print(findMaxScore(data))

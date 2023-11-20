@@ -1,3 +1,4 @@
+print("Advent of Code 2022, Link to Problem: {}".format('https://adventofcode.com/2022/day/1'))
 
 def getMaxCalories(data):
     maxCalories = 0

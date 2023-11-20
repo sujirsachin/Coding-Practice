@@ -1,3 +1,5 @@
+print("Advent of Code 2022, Link to Problem: {}".format('https://adventofcode.com/2022/day/2'))
+
 def findMaxScore(data) -> int:
     finalScore = 0
     score = {"X": 1,
